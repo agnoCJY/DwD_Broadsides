@@ -8,7 +8,7 @@ from wordcloud import WordCloud, STOPWORDS
 import pandas as pd
 
 
-root_dir = r'F:\Edin\1_2\Design with Data\Project\word_count\per_subject'
+root_dir = r'F:\Edin\1_2\Design with Data\Project\word_count\per_subject_combined'
 
 
 
