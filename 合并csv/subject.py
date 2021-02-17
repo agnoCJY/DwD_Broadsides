@@ -1,10 +1,9 @@
 import pandas as pd
 from tqdm import trange
-from time import sleep
 
 print("\n")
 
-inventory = pd.read_csv("/Users/jingyichu/Documents/DwD/合并csv/broadsides_inventory.csv", encoding='utf-8', index_col=0, parse_dates=True, header=None)
+inventory = pd.read_csv("/Users/jingyichu/Documents/DwD/DwD_Broadsides/合并csv/broadsides_inventory.csv", encoding='utf-8', index_col=0, parse_dates=True, header=None)
 inventory.columns = ["title"]
 inventory["selfmark"] = None
 inventory["PlainTitle"] = None
@@ -17,7 +16,7 @@ inventory["subject"] = None
 inventory["year"] = None
 print(inventory.head())
 
-subject = pd.read_csv("/Users/jingyichu/Documents/DwD/合并csv/subject.csv", encoding='utf-8', index_col=0, parse_dates=True)
+subject = pd.read_csv("/Users/jingyichu/Documents/DwD/DwD_Broadsides/合并csv/subject.csv", encoding='utf-8', index_col=0, parse_dates=True)
 subject["PlainTitle"] = None
 for subj_index, subj_row in subject.iterrows():
     try:
@@ -26,7 +25,7 @@ for subj_index, subj_row in subject.iterrows():
         pass
 
 subject_dict_sm = dict(zip(list(subject.selfmark), list(subject.key)))
-# print(subject_dict_sm)
+print(len(subject_dict_sm))
 year_dict_sm = dict(zip(list(subject.selfmark), list(subject.year)))
 
 
