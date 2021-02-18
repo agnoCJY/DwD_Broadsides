@@ -35,6 +35,18 @@ def HumanName (text):
                     break
 
     print(person_names)
+
+    #TODO 就是这里
+    places.cities = list(set(places.cities))
+    city_list.append(",".join(str(x) for x in places.cities))
+    print(city_list)
+    for i in range(len(city_list)):
+        city_list[i] = str(city_list[i]).replace(',', ' ')
+    cities = " ".join(str(i) for i in city_list)
+    city_list = cities.split(" ")
+    print(city_list)
+    city_list = (", ".join(str(i) for i in city_list))
+
     return person_names
 
 new_inventory = pd.read_csv("合并csv/new_inventory.csv", encoding='utf-8', index_col=0, parse_dates=True)
