@@ -17,6 +17,8 @@ def find_cities_countries_continent(text):
     cities = " ".join(str(i) for i in city_list)
     city_list = cities.split(" ")
     print(city_list)
+    city_list = (", ".join(str(i) for i in city_list))
+    print(city_list)
     if len(places.cities) != 0:
         # print(places.cities)
         for key in places.country_mentions.keys():
@@ -36,7 +38,7 @@ def country_to_continent(country_alpha2):
     country_continent_nam = pc.convert_continent_code_to_continent_name(country_continent_code)
     return country_continent_nam
 
-new_inventory = pd.read_csv(r"F:\Edin\1_2\Design with Data\Data\inventory_name.csv", encoding='utf-8', index_col=0, parse_dates=True)
+new_inventory = pd.read_csv(r"F:\Edin\1_2\Design with Data\Project\HumanName\inventory_name.csv", encoding='utf-8', index_col=0, parse_dates=True)
 new_inventory['cities'] = None
 new_inventory['countries'] = None
 new_inventory['continent'] = None
