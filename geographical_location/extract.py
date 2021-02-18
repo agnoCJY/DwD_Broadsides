@@ -11,6 +11,12 @@ def find_cities_countries_continent(text):
     places = GeoText(text)
     places.cities = list(set(places.cities))
     city_list.append(",".join(str(x) for x in places.cities))
+    print(city_list)
+    for i in range(len(city_list)):
+        city_list[i] = str(city_list[i]).replace(',', ' ')
+    cities = " ".join(str(i) for i in city_list)
+    city_list = cities.split(" ")
+    print(city_list)
     if len(places.cities) != 0:
         # print(places.cities)
         for key in places.country_mentions.keys():
@@ -21,6 +27,7 @@ def find_cities_countries_continent(text):
                 continue
             country_list.append(country.name)
             continent_list.append(continent)
+    continent_list = list(set(continent_list))
     return city_list, country_list, continent_list
 
 
