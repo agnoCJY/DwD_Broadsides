@@ -41,6 +41,7 @@ new_inventory = pd.read_csv("合并csv/new_inventory.csv", encoding='utf-8', ind
 new_inventory['name'] = None
 print(new_inventory.head())
 
+full_name = []
 
 for ni_index, ni_row in new_inventory.iterrows():
     if ni_row.name == 0:
@@ -50,8 +51,14 @@ for ni_index, ni_row in new_inventory.iterrows():
         file_path = 'nls-text-broadsides/' + file_name + '.txt'
         with open(file_path, 'r') as f:
             text = f.read()
-        ni_row['name'] = HumanName(text)
+        all_name = HumanName(text)
+        ni_row['name'] = all_name
+        if len(all_name) > 0:
+            for item in all_name:
+                full_name.append(item)
 
 print(new_inventory.head())
 
 new_inventory.to_csv("HumanName/inventory_name.csv")
+
+
