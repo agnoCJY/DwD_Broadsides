@@ -36,16 +36,17 @@ def HumanName (text):
 
     print(person_names)
 
-    #TODO 就是这里
-    places.cities = list(set(places.cities))
-    city_list.append(",".join(str(x) for x in places.cities))
-    print(city_list)
-    for i in range(len(city_list)):
-        city_list[i] = str(city_list[i]).replace(',', ' ')
-    cities = " ".join(str(i) for i in city_list)
-    city_list = cities.split(" ")
-    print(city_list)
-    city_list = (", ".join(str(i) for i in city_list))
+
+    # # TODO 就是这里
+    # places.cities = list(set(places.cities))
+    # city_list.append(",".join(str(x) for x in places.cities))
+    # print(city_list)
+    # for i in range(len(city_list)):
+    #     city_list[i] = str(city_list[i]).replace(',', ' ')
+    # cities = " ".join(str(i) for i in city_list)
+    # city_list = cities.split(" ")
+    # print(city_list)
+    # city_list = (", ".join(str(i) for i in city_list))
 
     return person_names
 
@@ -73,4 +74,20 @@ print(new_inventory.head())
 
 new_inventory.to_csv("HumanName/inventory_name.csv")
 
+
+name_time = pd.DataFrame(columns=['name', 'time'])
+
+full_name_set = set(full_name)
+
+for item in full_name_set:
+    name_time = name_time.append(pd.DataFrame({'name':[item], 'time':[full_name.count(item)]}),ignore_index=True)
+
+print(name_time.head())
+
+name_time.sort_values(by='time', ascending=False)
+name_time.to_csv("Frequency/new_name.csv")
+
+sort_name = pd.read_csv("Frequency/new_name.csv", encoding='utf-8', index_col=0, parse_dates=True)
+new_sort = sort_name.sort_values(by='time', ascending=False)
+new_sort.to_csv("Frequency/new_sort_name.csv")
 
