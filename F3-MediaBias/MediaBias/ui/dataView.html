@@ -1,0 +1,24 @@
+<h2>Current DB listing:</h2>
+
+<table>
+	<tr>
+		<th>name</th><th>Episode1</th><th>Episode2</th><th>Episode3</th>
+	</tr>
+	<repeat group="{{ @dbData }}" value="{{ @record }}">
+		<tr>
+			<td>{{ trim(@record.name) }}</td>
+			<td>{{ trim(@record.episode1) }}</td>
+			<td>{{ trim(@record.episode2) }}</td>
+			<td>{{ trim(@record.episode3) }}</td>
+		</tr>
+	</repeat>
+</table>
+
+<br>
+<br>
+<p>A pie chart showing the percentage of each option </p>
+<br>
+<br>
+
+<p>Why did BIAS arise?</p>
+<p>People like negativity ➡️ Businesses are more willing to publish negativity ➡️ The atmosphere becomes more negative</p>

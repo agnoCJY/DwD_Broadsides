@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="1e631fba-0ec9-491f-bc85-9f05b74b143f" name="Edinburgh Domains" url="http://jychuuu.edinburgh.domains/">
+        <fileTransfer rootFolder="/home/jychuuue" accessType="SFTP" host="jychuuu.edinburgh.domains" port="22" sshConfigId="dcd283fd-12b5-4ac4-8315-47e53d9307eb" sshConfig="jychuuue@jychuuu.edinburgh.domains:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
+    </option>
+  </component>
+</project>

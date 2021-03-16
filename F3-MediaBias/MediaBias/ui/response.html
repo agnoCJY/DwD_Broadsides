@@ -1,0 +1,21 @@
+<!-- 
+A very simple response View template:
+just echoes what the input data were.
+The parameter "formData" is an array that
+has been set as a global F3 variable, using $f3->set().
+ -->
+
+<h1>Thanks for your data, {{ @formData.name }} ...</h1>
+<p> Your episode was: <br></p>
+
+<p>1. {{ @formData.episode1 }}</p>
+<p>This is a negative/positive episode</p>
+
+<p>2. {{ @formData.episode2 }}</p>
+<p>This is a negative/positive episode</p>
+
+<p>3. {{ @formData.episode3 }}</p>
+<p>This is a negative/positive episode</p>
+
+<hr />
+<a href="{{ @BASE }}/dataView">Show all data</a>

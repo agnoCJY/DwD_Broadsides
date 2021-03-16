@@ -1,0 +1,46 @@
+<!-- 
+A very simple input form View template:
+note that the form method is POST, and the action
+is the URL for the route that handles form input.
+ -->
+
+<p>After reading two stories, what was the episode that most impressed you?</p>
+<form id="form1" name="form1" method="post" action="{{ @BASE }}/simpleform">
+  Please enter your name:
+  <input name="name" type="text" placeholder="Enter name" id="name" size="50" />
+
+<p>Choose the three episodes that impressed you most：
+  <select name="episode1" id="episode1">
+    <option type="checkbox" value="Mothers use their children as money makers">Mothers use their children as money makers</option>
+    <option type="checkbox" value="Alcoholic father attempts to kill his own child">Alcoholic father attempts to kill his own child</option>
+    <option type="checkbox" value="Mothers teaching their children">Mothers teaching their children</option>
+      <option type="checkbox" value="Child does not want to perform and cries on stage">Child does not want to perform and cries on stage</option>
+      <option type="checkbox" value="Mother leaves home of alcoholic husband">Mother leaves home of alcoholic husband</option>
+  </select>
+
+    <select name="episode2" id="episode2">
+        <option type="checkbox" value="Mothers use their children as money makers">Mothers use their children as money makers</option>
+        <option type="checkbox" value="Alcoholic father attempts to kill his own child">Alcoholic father attempts to kill his own child</option>
+        <option type="checkbox" value="Mothers teaching their children">Mothers teaching their children</option>
+        <option type="checkbox" value="Child does not want to perform and cries on stage">Child does not want to perform and cries on stage</option>
+        <option type="checkbox" value="Mother leaves home of alcoholic husband">Mother leaves home of alcoholic husband</option>
+    </select>
+
+    <select name="episode3" id="episode3">
+        <option type="checkbox" value="Mothers use their children as money makers">Mothers use their children as money makers</option>
+        <option type="checkbox" value="Alcoholic father attempts to kill his own child">Alcoholic father attempts to kill his own child</option>
+        <option type="checkbox" value="Mothers teaching their children">Mothers teaching their children</option>
+        <option type="checkbox" value="Child does not want to perform and cries on stage">Child does not want to perform and cries on stage</option>
+        <option type="checkbox" value="Mother leaves home of alcoholic husband">Mother leaves home of alcoholic husband</option>
+    </select>
+
+</p>
+
+<!--  <form>-->
+<!--    <input type="checkbox" name="vehicle" value="Bike" >I have a bike<br>-->
+<!--    <input type="checkbox" name="vehicle" value="Car" ">I have a car-->
+<!--  </form>-->
+<p>
+  <input type="submit" name="Submit" value="Submit" />
+</p>
+</form>
